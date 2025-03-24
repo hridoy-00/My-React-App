@@ -4,31 +4,70 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <h1>Vite + React </h1>
+    <Person></Person>
+    <Person></Person>
+    <Person></Person>
+    <Sports></Sports>
+    <Developer name ="Hriday" tec=" Python" ></Developer>
+    <Developer name = "Rezvi" tec= " Java"></Developer>
+    <Salami event="Roja Eid" amount="20"></Salami>
+    <Salami event="Roja Eid" amount="50"></Salami>
     </>
+  )
+  
+}
+
+function Salami({event,amount}){
+  return (
+    <div style={{
+      border: '2px solid green',
+      borderRadius: '20px',
+      marginBottom: '5px',
+      backgroundColor :'white',
+      color: 'black',
+    }} className='Universal'>
+      <p>Salami For:{ event} </p>
+      <p> Amount:{amount} </p>
+    </div>
+  )
+}
+
+function Person(){
+let age = 22;
+  return (
+    <>
+    <p>I am Hriday {age}</p>
+    </>
+  )
+}
+function Sports(){
+  return (
+    <div> 
+      <h3>I love Crecket</h3>
+    <p>Sports Component</p>
+    </div>
+  )
+}
+function Developer(props) {
+  return(
+    <div style={
+      {
+        border: '2px solid green',
+        borderRadius: '20px',
+        marginBottom: '5px',
+        backgroundColor :'white',
+        color: 'black',
+
+      }}>
+        <h3>Developer: {props.name}
+        </h3>
+        <p>Technology:{props.tec} </p>
+      </div>
+     
+    
   )
 }
 
