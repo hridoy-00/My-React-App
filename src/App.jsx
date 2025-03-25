@@ -9,15 +9,15 @@ function App() {
   return (
     <>
     <h1>Vite + React </h1>
-    <ToDo task = "Learn react: "></ToDo>
-    {/* <Person></Person>
+    <ToDo task = "Learn react : "></ToDo>
+    <Person></Person>
     <Person></Person>
     <Person></Person>
     <Sports></Sports>
     <Developer name ="Hriday" tec=" Python" ></Developer>
     <Developer name = "Rezvi" tec= " Java"></Developer>
     <Salami event="Roja Eid" amount="20"></Salami>
-    <Salami event="Roja Eid" amount="50"></Salami> */}
+    <Salami event="Roja Eid" amount="50"></Salami>
     </>
   )
   
