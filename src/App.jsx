@@ -2,12 +2,19 @@ import { Suspense, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Users from './users'
+import Users from './Users'
 import ToDo from './Todo'
+import Freinds from './Friends'
 
 const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
 
+const fethFriends = async() =>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  return res.json();
+}
+
 function App() {
+  const friendsPromise = fethFriends();
   return (
     <>
     <h1>Vite + React </h1>
@@ -15,6 +22,10 @@ function App() {
     
  <Suspense fallback={<h3>Loading.....</h3>}>
   <Users fetchUsers={fetchUsers}></Users>
+ </Suspense>
+
+ <Suspense fallback= {<h3>Freinds are coming</h3>}>
+ <Freinds friendsPromise={friendsPromise} ></Freinds>
  </Suspense>
 
     <Person></Person>
