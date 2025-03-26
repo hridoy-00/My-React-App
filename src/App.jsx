@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Users from './users'
 import ToDo from './Todo'
 
+const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
 
 function App() {
   return (
     <>
     <h1>Vite + React </h1>
     <ToDo task = "Learn react : "></ToDo>
-    <Person></Person>
-    <Person></Person>
+    
+ <Suspense fallback={<h3>Loading.....</h3>}>
+  <Users fetchUsers={fetchUsers}></Users>
+ </Suspense>
+
     <Person></Person>
     <Sports></Sports>
     <Developer name ="Hriday" tec=" Python" ></Developer>
